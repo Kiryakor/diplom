@@ -10,7 +10,7 @@ import CoreML
 import AVKit
 import Vision
 
-class ViewController: UIViewController {
+class LiveCameraViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -25,6 +25,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLiveCamera()
+        setupUI()
+    }
+    
+    // MARK: - Private
+    
+    private func setupUI() {
+        view.addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+    }
+    
+    private func setupLiveCamera() {
         let captureSession = AVCaptureSession()
         captureSession.sessionPreset = .photo
         
@@ -44,22 +59,10 @@ class ViewController: UIViewController {
         let dataOutput = AVCaptureVideoDataOutput()
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(dataOutput)
-        
-        setupUI()
-    }
-    
-    // MARK: - Private
-    
-    private func setupUI() {
-        view.addSubview(titleLabel)
-        NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-        ])
     }
 }
 
-extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension LiveCameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func captureOutput(_ output: AVCaptureOutput,
                        didOutput sampleBuffer: CMSampleBuffer,
@@ -77,8 +80,12 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             else { return }
             
             DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                self.titleLabel.text = "\(result.identifier)"
+                guard
+                    let self = self,
+                    let result = result.identifier.split(separator: ",").first
+                else { return }
+                
+                self.titleLabel.text = "\(result)"
             }
         }
         
