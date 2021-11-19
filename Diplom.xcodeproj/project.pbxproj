@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		735E0870BF1D5AFAB537BA58 /* Pods_Diplom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 314941C8F89F22EBC5DF6459 /* Pods_Diplom.framework */; };
 		ED616D012746B2420058669D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D002746B2420058669D /* AppDelegate.swift */; };
 		ED616D032746B2420058669D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D022746B2420058669D /* SceneDelegate.swift */; };
 		ED616D052746B2420058669D /* LiveCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D042746B2420058669D /* LiveCameraViewController.swift */; };
@@ -14,9 +15,14 @@
 		ED616D0A2746B2460058669D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED616D092746B2460058669D /* Assets.xcassets */; };
 		ED616D0D2746B2460058669D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED616D0B2746B2460058669D /* LaunchScreen.storyboard */; };
 		ED616D152746B8AB0058669D /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED616D142746B8AB0058669D /* SqueezeNet.mlmodel */; };
+		EDC02DB4274838CF004EBFB0 /* UIView + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC02DB3274838CF004EBFB0 /* UIView + extention.swift */; };
+		EDC02DB62748397B004EBFB0 /* AnswerPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC02DB52748397B004EBFB0 /* AnswerPanelView.swift */; };
+		EDC02DB827483B7A004EBFB0 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC02DB727483B7A004EBFB0 /* AppColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12B21D632A80A592ECED1BA9 /* Pods-Diplom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diplom.debug.xcconfig"; path = "Target Support Files/Pods-Diplom/Pods-Diplom.debug.xcconfig"; sourceTree = "<group>"; };
+		314941C8F89F22EBC5DF6459 /* Pods_Diplom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diplom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED616CFD2746B2420058669D /* Diplom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diplom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED616D002746B2420058669D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED616D022746B2420058669D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +32,10 @@
 		ED616D0C2746B2460058669D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED616D0E2746B2460058669D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED616D142746B8AB0058669D /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
+		EDC02DB3274838CF004EBFB0 /* UIView + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + extention.swift"; sourceTree = "<group>"; };
+		EDC02DB52748397B004EBFB0 /* AnswerPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerPanelView.swift; sourceTree = "<group>"; };
+		EDC02DB727483B7A004EBFB0 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		FA50970194375666F10FF608 /* Pods-Diplom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diplom.release.xcconfig"; path = "Target Support Files/Pods-Diplom/Pods-Diplom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				735E0870BF1D5AFAB537BA58 /* Pods_Diplom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F22249C34DF7FAAA43100E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				314941C8F89F22EBC5DF6459 /* Pods_Diplom.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67342883069F80159A666ABE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				12B21D632A80A592ECED1BA9 /* Pods-Diplom.debug.xcconfig */,
+				FA50970194375666F10FF608 /* Pods-Diplom.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ED616CF42746B2420058669D = {
 			isa = PBXGroup;
 			children = (
 				ED616CFF2746B2420058669D /* Diplom */,
 				ED616CFE2746B2420058669D /* Products */,
+				67342883069F80159A666ABE /* Pods */,
+				0F22249C34DF7FAAA43100E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +88,7 @@
 		ED616CFF2746B2420058669D /* Diplom */ = {
 			isa = PBXGroup;
 			children = (
+				EDC02DB2274838B4004EBFB0 /* Supported */,
 				ED7CD1162746C41F004EED4A /* UI */,
 				ED616D002746B2420058669D /* AppDelegate.swift */,
 				ED616D022746B2420058669D /* SceneDelegate.swift */,
@@ -74,8 +105,18 @@
 			isa = PBXGroup;
 			children = (
 				ED616D042746B2420058669D /* LiveCameraViewController.swift */,
+				EDC02DB52748397B004EBFB0 /* AnswerPanelView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		EDC02DB2274838B4004EBFB0 /* Supported */ = {
+			isa = PBXGroup;
+			children = (
+				EDC02DB3274838CF004EBFB0 /* UIView + extention.swift */,
+				EDC02DB727483B7A004EBFB0 /* AppColor.swift */,
+			);
+			path = Supported;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED616D112746B2460058669D /* Build configuration list for PBXNativeTarget "Diplom" */;
 			buildPhases = (
+				86CE347EF983E936573430F8 /* [CP] Check Pods Manifest.lock */,
 				ED616CF92746B2420058669D /* Sources */,
 				ED616CFA2746B2420058669D /* Frameworks */,
 				ED616CFB2746B2420058669D /* Resources */,
+				7F04F36ACA656D2A57B4D076 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,6 +187,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7F04F36ACA656D2A57B4D076 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Diplom/Pods-Diplom-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Diplom/Pods-Diplom-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Diplom/Pods-Diplom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86CE347EF983E936573430F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Diplom-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED616CF92746B2420058669D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -151,8 +236,11 @@
 			files = (
 				ED616D052746B2420058669D /* LiveCameraViewController.swift in Sources */,
 				ED616D012746B2420058669D /* AppDelegate.swift in Sources */,
+				EDC02DB4274838CF004EBFB0 /* UIView + extention.swift in Sources */,
+				EDC02DB827483B7A004EBFB0 /* AppColor.swift in Sources */,
 				ED616D032746B2420058669D /* SceneDelegate.swift in Sources */,
 				ED616D152746B8AB0058669D /* SqueezeNet.mlmodel in Sources */,
+				EDC02DB62748397B004EBFB0 /* AnswerPanelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +384,7 @@
 		};
 		ED616D122746B2460058669D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12B21D632A80A592ECED1BA9 /* Pods-Diplom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -324,6 +413,7 @@
 		};
 		ED616D132746B2460058669D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA50970194375666F10FF608 /* Pods-Diplom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

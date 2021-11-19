@@ -9,15 +9,13 @@ import UIKit
 import CoreML
 import AVKit
 import Vision
+import SnapKit
 
 class LiveCameraViewController: UIViewController {
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private let answerPanelView: AnswerPanelView = {
+        let view = AnswerPanelView()
+        return view
     }()
 
     // MARK: - Lifecycle
@@ -25,19 +23,12 @@ class LiveCameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = AppColor.backgroundColorColor
         setupLiveCamera()
-        setupUI()
+        setupAnswerPanelView()
     }
     
     // MARK: - Private
-    
-    private func setupUI() {
-        view.addSubview(titleLabel)
-        NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-        ])
-    }
     
     private func setupLiveCamera() {
         let captureSession = AVCaptureSession()
@@ -59,6 +50,24 @@ class LiveCameraViewController: UIViewController {
         let dataOutput = AVCaptureVideoDataOutput()
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(dataOutput)
+    }
+    
+    private func setupAnswerPanelView() {
+        view.addSubview(answerPanelView)
+        
+        answerPanelView.snp.makeConstraints { make in
+            make.left.right.equalTo(view)
+            make.height.equalTo(AnswerPanelView.estimateHeight())
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        
+        answerPanelView.cancelAction = {
+            print("cancelAction")
+        }
+        
+        answerPanelView.doneAction = {
+            print("doneAction")
+        }
     }
 }
 
@@ -85,7 +94,7 @@ extension LiveCameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate
                     let result = result.identifier.split(separator: ",").first
                 else { return }
                 
-                self.titleLabel.text = "\(result)"
+                self.answerPanelView.title = "\(result)"
             }
         }
         
