@@ -20,7 +20,7 @@ class AnswerPanelView: UIView {
     
     private let doneButton: UIButton = {
         let view = UIButton()
-        view.setTitle(NSLocalizedString("Done", comment: ""), for: .normal)
+        view.setTitle("Done".localized, for: .normal)
         view.titleLabel?.textAlignment = .center
         view.titleLabel?.textColor = AppColor.textColor
         view.layer.cornerRadius = Constants.buttonRadius
@@ -32,7 +32,7 @@ class AnswerPanelView: UIView {
     
     private let cancelButton: UIButton = {
         let view = UIButton()
-        view.setTitle(NSLocalizedString("Cancel", comment: ""), for: .normal)
+        view.setTitle("Cancel".localized, for: .normal)
         view.titleLabel?.textAlignment = .center
         view.titleLabel?.textColor = AppColor.textColor
         view.layer.cornerRadius = Constants.buttonRadius
@@ -54,9 +54,8 @@ class AnswerPanelView: UIView {
     
     init() {
         super.init(frame: .zero)
-        
-        backgroundColor = AppColor.backgroundColorColor
-        self.setupUI()
+
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -84,6 +83,7 @@ class AnswerPanelView: UIView {
     // MARK: - Private
     
     private func setupUI() {
+        backgroundColor = AppColor.backgroundColorColor
         
         addSubviews([
             answerLabel,

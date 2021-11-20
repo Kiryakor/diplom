@@ -23,12 +23,16 @@ class LiveCameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+    }
+    
+    // MARK: - Private
+    
+    private func setupUI() {
         view.backgroundColor = AppColor.backgroundColorColor
         setupLiveCamera()
         setupAnswerPanelView()
     }
-    
-    // MARK: - Private
     
     private func setupLiveCamera() {
         let captureSession = AVCaptureSession()
