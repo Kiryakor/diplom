@@ -104,7 +104,7 @@ class AnswerPanelView: UIView {
         }
         
         answerLabel.snp.makeConstraints { make in
-            make.top.left.right.equalTo(self).offset(Constants.titleSpacing)
+            make.top.left.equalTo(self).offset(Constants.titleSpacing)
             make.right.equalTo(self).offset(-Constants.titleSpacing)
         }
     }
