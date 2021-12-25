@@ -13,8 +13,17 @@ import SnapKit
 
 class LiveCameraViewController: UIViewController {
     
+    private enum Constants {
+        static let scannerViewOffset: CGFloat = 8
+    }
+    
     private let answerPanelView: AnswerPanelView = {
         let view = AnswerPanelView()
+        return view
+    }()
+    
+    private let scannerView: ScannerView = {
+        let view = ScannerView()
         return view
     }()
 
@@ -29,9 +38,14 @@ class LiveCameraViewController: UIViewController {
     // MARK: - Private
     
     private func setupUI() {
-        view.backgroundColor = AppColor.backgroundColorColor
+        view.backgroundColor = AppColor.backgroundColor
+        
+#if !targetEnvironment(simulator)
         setupLiveCamera()
+#endif
+        
         setupAnswerPanelView()
+        setupScannerView()
     }
     
     private func setupLiveCamera() {
@@ -72,6 +86,19 @@ class LiveCameraViewController: UIViewController {
         answerPanelView.doneAction = {
             print("doneAction")
         }
+    }
+    
+    private func setupScannerView() {
+        view.addSubview(scannerView)
+        
+        let size = view.bounds.width - 2 * Constants.scannerViewOffset
+        scannerView.snp.makeConstraints { make in
+            make.width.height.equalTo(size)
+            make.centerX.centerY.equalTo(view)
+        }
+        
+        scannerView.title = "Camera".localized
+        scannerView.image = AppImage.cameraIcon
     }
 }
 

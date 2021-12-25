@@ -11,7 +11,9 @@ import UIKit
 enum AppColor {
     static let redColor = UIColor.red
     static let greenColor = UIColor.green
+    static let blackColor = UIColor.black
     
     static let textColor = UIColor.black
-    static let backgroundColorColor = UIColor.white
+    static let backgroundColor = UIColor.white
+    static let clearColor = UIColor.clear
 }

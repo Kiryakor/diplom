@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		735E0870BF1D5AFAB537BA58 /* Pods_Diplom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 314941C8F89F22EBC5DF6459 /* Pods_Diplom.framework */; };
+		ED04A51B277772EA003D533B /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04A51A277772EA003D533B /* ScannerView.swift */; };
+		ED04A51D27777396003D533B /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04A51C27777396003D533B /* AppImage.swift */; };
 		ED2B514A27497CCF00C13E27 /* String + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B514927497CCF00C13E27 /* String + extension.swift */; };
 		ED616D012746B2420058669D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D002746B2420058669D /* AppDelegate.swift */; };
 		ED616D032746B2420058669D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D022746B2420058669D /* SceneDelegate.swift */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		12B21D632A80A592ECED1BA9 /* Pods-Diplom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diplom.debug.xcconfig"; path = "Target Support Files/Pods-Diplom/Pods-Diplom.debug.xcconfig"; sourceTree = "<group>"; };
 		314941C8F89F22EBC5DF6459 /* Pods_Diplom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diplom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED04A51A277772EA003D533B /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		ED04A51C27777396003D533B /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		ED2B514927497CCF00C13E27 /* String + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extension.swift"; sourceTree = "<group>"; };
 		ED616CFD2746B2420058669D /* Diplom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diplom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED616D002746B2420058669D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 			children = (
 				ED616D042746B2420058669D /* LiveCameraViewController.swift */,
 				EDC02DB52748397B004EBFB0 /* AnswerPanelView.swift */,
+				ED04A51A277772EA003D533B /* ScannerView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 				EDC02DB3274838CF004EBFB0 /* UIView + extention.swift */,
 				EDC02DB727483B7A004EBFB0 /* AppColor.swift */,
 				ED2B514927497CCF00C13E27 /* String + extension.swift */,
+				ED04A51C27777396003D533B /* AppImage.swift */,
 			);
 			path = Supported;
 			sourceTree = "<group>";
@@ -237,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED04A51B277772EA003D533B /* ScannerView.swift in Sources */,
 				ED616D052746B2420058669D /* LiveCameraViewController.swift in Sources */,
 				ED616D012746B2420058669D /* AppDelegate.swift in Sources */,
 				ED2B514A27497CCF00C13E27 /* String + extension.swift in Sources */,
@@ -245,6 +252,7 @@
 				ED616D032746B2420058669D /* SceneDelegate.swift in Sources */,
 				ED616D152746B8AB0058669D /* SqueezeNet.mlmodel in Sources */,
 				EDC02DB62748397B004EBFB0 /* AnswerPanelView.swift in Sources */,
+				ED04A51D27777396003D533B /* AppImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
