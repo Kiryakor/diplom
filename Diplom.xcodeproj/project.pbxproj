@@ -17,7 +17,7 @@
 		ED616D082746B2420058669D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED616D062746B2420058669D /* Main.storyboard */; };
 		ED616D0A2746B2460058669D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED616D092746B2460058669D /* Assets.xcassets */; };
 		ED616D0D2746B2460058669D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED616D0B2746B2460058669D /* LaunchScreen.storyboard */; };
-		ED616D152746B8AB0058669D /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED616D142746B8AB0058669D /* SqueezeNet.mlmodel */; };
+		ED9F666027D5185E000784F8 /* DiplomML.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED9F665F27D5185E000784F8 /* DiplomML.mlmodel */; };
 		EDC02DB4274838CF004EBFB0 /* UIView + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC02DB3274838CF004EBFB0 /* UIView + extention.swift */; };
 		EDC02DB62748397B004EBFB0 /* AnswerPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC02DB52748397B004EBFB0 /* AnswerPanelView.swift */; };
 		EDC02DB827483B7A004EBFB0 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC02DB727483B7A004EBFB0 /* AppColor.swift */; };
@@ -37,7 +37,7 @@
 		ED616D092746B2460058669D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED616D0C2746B2460058669D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED616D0E2746B2460058669D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED616D142746B8AB0058669D /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
+		ED9F665F27D5185E000784F8 /* DiplomML.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DiplomML.mlmodel; sourceTree = "<group>"; };
 		EDC02DB3274838CF004EBFB0 /* UIView + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + extention.swift"; sourceTree = "<group>"; };
 		EDC02DB52748397B004EBFB0 /* AnswerPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerPanelView.swift; sourceTree = "<group>"; };
 		EDC02DB727483B7A004EBFB0 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 				ED7CD1162746C41F004EED4A /* UI */,
 				ED616D002746B2420058669D /* AppDelegate.swift */,
 				ED616D022746B2420058669D /* SceneDelegate.swift */,
-				ED616D142746B8AB0058669D /* SqueezeNet.mlmodel */,
 				ED616D062746B2420058669D /* Main.storyboard */,
+				ED9F665F27D5185E000784F8 /* DiplomML.mlmodel */,
 				ED616D092746B2460058669D /* Assets.xcassets */,
 				ED616D0B2746B2460058669D /* LaunchScreen.storyboard */,
 				ED616D0E2746B2460058669D /* Info.plist */,
@@ -245,12 +245,12 @@
 			files = (
 				ED04A51B277772EA003D533B /* ScannerView.swift in Sources */,
 				ED616D052746B2420058669D /* LiveCameraViewController.swift in Sources */,
+				ED9F666027D5185E000784F8 /* DiplomML.mlmodel in Sources */,
 				ED616D012746B2420058669D /* AppDelegate.swift in Sources */,
 				ED2B514A27497CCF00C13E27 /* String + extension.swift in Sources */,
 				EDC02DB4274838CF004EBFB0 /* UIView + extention.swift in Sources */,
 				EDC02DB827483B7A004EBFB0 /* AppColor.swift in Sources */,
 				ED616D032746B2420058669D /* SceneDelegate.swift in Sources */,
-				ED616D152746B8AB0058669D /* SqueezeNet.mlmodel in Sources */,
 				EDC02DB62748397B004EBFB0 /* AnswerPanelView.swift in Sources */,
 				ED04A51D27777396003D533B /* AppImage.swift in Sources */,
 			);

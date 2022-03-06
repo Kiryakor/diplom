@@ -111,7 +111,7 @@ extension LiveCameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
         let config = MLModelConfiguration()
-        guard let model = try? VNCoreMLModel(for: SqueezeNet(configuration: config).model) else { return }
+        guard let model = try? VNCoreMLModel(for: DiplomML(configuration: config).model) else { return }
         
         let reques = VNCoreMLRequest(model: model) { request, error in
             guard
