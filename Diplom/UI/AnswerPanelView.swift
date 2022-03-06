@@ -16,6 +16,8 @@ class AnswerPanelView: UIView {
         static let titleSpacing: CGFloat = 8
         
         static let panelHeight: CGFloat = 100 // toDo высчитывать от контента
+        
+        static let gallarySize: CGFloat = 35
     }
     
     private let doneButton: UIButton = {
@@ -50,6 +52,15 @@ class AnswerPanelView: UIView {
         return label
     }()
     
+    private let gallaryButton: UIButton = {
+        let view = UIButton()
+        view.layer.cornerRadius = Constants.gallarySize / 2
+        view.clipsToBounds = true
+        view.backgroundColor = .red
+        view.addTarget(self, action: #selector(tapGallaryButton), for: .touchUpInside)
+        return view
+    }()
+    
     // MARK: - Lifecycle
     
     init() {
@@ -75,6 +86,7 @@ class AnswerPanelView: UIView {
     
     var cancelAction: (() -> Void)?
     var doneAction: (() -> Void)?
+    var gallaryAction: (() -> Void)?
     
     static func estimateHeight() -> CGFloat {
         return Constants.panelHeight
@@ -89,6 +101,7 @@ class AnswerPanelView: UIView {
             answerLabel,
             doneButton,
             cancelButton,
+            gallaryButton,
         ])
         
         doneButton.snp.makeConstraints { make in
@@ -107,6 +120,11 @@ class AnswerPanelView: UIView {
             make.top.left.equalTo(self).offset(Constants.titleSpacing)
             make.right.equalTo(self).offset(-Constants.titleSpacing)
         }
+        
+        gallaryButton.snp.makeConstraints { make in
+            make.width.height.equalTo(Constants.gallarySize)
+            make.right.bottom.equalTo(-Constants.buttonSpacing)
+        }
     }
     
     @objc
@@ -117,5 +135,10 @@ class AnswerPanelView: UIView {
     @objc
     private func tapDoneButton() {
         doneAction?()
+    }
+    
+    @objc
+    private func tapGallaryButton() {
+        gallaryAction?()
     }
 }

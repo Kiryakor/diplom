@@ -86,6 +86,11 @@ class LiveCameraViewController: UIViewController {
         answerPanelView.doneAction = {
             print("doneAction")
         }
+        
+        answerPanelView.gallaryAction = { [weak self] in
+            guard let self = self else { return }
+            self.showImagePicker()
+        }
     }
     
     private func setupScannerView() {
@@ -130,5 +135,25 @@ extension LiveCameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate
         }
         
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([reques])
+    }
+}
+
+extension LiveCameraViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        if let image = info[.editedImage] as? UIImage {
+            print(image)
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    private func showImagePicker() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        self.present(picker, animated: true)
     }
 }
