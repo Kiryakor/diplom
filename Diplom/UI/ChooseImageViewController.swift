@@ -5,9 +5,11 @@
 //  Created by KIRILL on 07.03.2022.
 //
 
-import Foundation
 import UIKit
+import CoreML
+import AVKit
 import Vision
+import SnapKit
 
 class ChooseImageViewController: UIViewController {
     
@@ -57,25 +59,14 @@ class ChooseImageViewController: UIViewController {
         
         imageView.image = currentImage
         
-        let config = MLModelConfiguration()
-        guard let model = try? VNCoreMLModel(for: DiplomML(configuration: config).model) else { return }
-        
-        let reques = VNCoreMLRequest(model: model) { request, error in
-            guard
-                let results = request.results as? [VNClassificationObservation],
-                let result = results.first
-            else { return }
-            
-            DispatchQueue.main.async { [weak self] in
-                guard
-                    let self = self,
-                    let result = result.identifier.split(separator: ",").first
-                else { return }
-                
-                self.answerLabel.text = "\(result)"
+        guard let image = currentImage.cgImage else { return }
+        DiplomMLService.request(with: .image(image)) { [weak self] result in
+            switch result {
+            case .success(let value):
+                self?.answerLabel.text = value
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
-        
-        try? VNImageRequestHandler(cgImage: self.currentImage.cgImage!, options: [:]).perform([reques])
     }
 }

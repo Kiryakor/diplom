@@ -112,29 +112,16 @@ extension LiveCameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate
     func captureOutput(_ output: AVCaptureOutput,
                        didOutput sampleBuffer: CMSampleBuffer,
                        from connection: AVCaptureConnection) {
-        
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
-        let config = MLModelConfiguration()
-        guard let model = try? VNCoreMLModel(for: DiplomML(configuration: config).model) else { return }
-        
-        let reques = VNCoreMLRequest(model: model) { request, error in
-            guard
-                let results = request.results as? [VNClassificationObservation],
-                let result = results.first
-            else { return }
-            
-            DispatchQueue.main.async { [weak self] in
-                guard
-                    let self = self,
-                    let result = result.identifier.split(separator: ",").first
-                else { return }
-                
-                self.answerPanelView.title = "\(result)"
+        DiplomMLService.request(with: .imageBuffer(pixelBuffer)) { result in
+            switch result {
+            case .success(let value):
+                self.answerPanelView.title = value
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
-        
-        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([reques])
     }
 }
 

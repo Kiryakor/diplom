@@ -11,6 +11,7 @@
 		ED04A51B277772EA003D533B /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04A51A277772EA003D533B /* ScannerView.swift */; };
 		ED04A51D27777396003D533B /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04A51C27777396003D533B /* AppImage.swift */; };
 		ED120FFE27D66C43000C7492 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED120FFD27D66C43000C7492 /* ChooseImageViewController.swift */; };
+		ED12100027D673F8000C7492 /* DiplomMLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED120FFF27D673F8000C7492 /* DiplomMLService.swift */; };
 		ED2B514A27497CCF00C13E27 /* String + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B514927497CCF00C13E27 /* String + extension.swift */; };
 		ED616D012746B2420058669D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D002746B2420058669D /* AppDelegate.swift */; };
 		ED616D032746B2420058669D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D022746B2420058669D /* SceneDelegate.swift */; };
@@ -30,6 +31,7 @@
 		ED04A51A277772EA003D533B /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		ED04A51C27777396003D533B /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		ED120FFD27D66C43000C7492 /* ChooseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageViewController.swift; sourceTree = "<group>"; };
+		ED120FFF27D673F8000C7492 /* DiplomMLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiplomMLService.swift; sourceTree = "<group>"; };
 		ED2B514927497CCF00C13E27 /* String + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extension.swift"; sourceTree = "<group>"; };
 		ED616CFD2746B2420058669D /* Diplom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diplom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED616D002746B2420058669D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				EDC02DB727483B7A004EBFB0 /* AppColor.swift */,
 				ED2B514927497CCF00C13E27 /* String + extension.swift */,
 				ED04A51C27777396003D533B /* AppImage.swift */,
+				ED120FFF27D673F8000C7492 /* DiplomMLService.swift */,
 			);
 			path = Supported;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED04A51B277772EA003D533B /* ScannerView.swift in Sources */,
+				ED12100027D673F8000C7492 /* DiplomMLService.swift in Sources */,
 				ED616D052746B2420058669D /* LiveCameraViewController.swift in Sources */,
 				ED9F666027D5185E000784F8 /* DiplomML.mlmodel in Sources */,
 				ED616D012746B2420058669D /* AppDelegate.swift in Sources */,
@@ -404,9 +408,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZQ27S689GF;
+				DEVELOPMENT_TEAM = 7X982MAA37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Diplom/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -421,6 +426,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kiraykor-project.Diplom";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -433,9 +439,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZQ27S689GF;
+				DEVELOPMENT_TEAM = 7X982MAA37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Diplom/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -450,6 +457,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kiraykor-project.Diplom";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
