@@ -13,7 +13,7 @@
             continueAfterRunningActions = "No"
             filePath = "Diplom/UI/LiveCameraViewController.swift"
             startingColumnNumber = "18"
-            endingColumnNumber = "33"
+            endingColumnNumber = "18"
             startingLineNumber = "51"
             endingLineNumber = "51"
             landmarkName = "setupLiveCamera()"

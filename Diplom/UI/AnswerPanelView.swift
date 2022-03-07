@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 class AnswerPanelView: UIView {
     
@@ -67,6 +68,7 @@ class AnswerPanelView: UIView {
         super.init(frame: .zero)
 
         setupUI()
+        self.fetchPhotos()
     }
     
     required init?(coder: NSCoder) {
@@ -140,5 +142,39 @@ class AnswerPanelView: UIView {
     @objc
     private func tapGallaryButton() {
         gallaryAction?()
+    }
+}
+
+private extension AnswerPanelView {
+    // toDo вынесли отдельно и запращивать нужное кол-во фото или всё
+    func fetchPhotos () {
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: false)]
+        fetchOptions.fetchLimit = 1
+        
+        let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: fetchOptions)
+        
+        if fetchResult.count > 0 {
+            let totalImageCountNeeded = 1
+            fetchPhotoAtIndex(0, totalImageCountNeeded, fetchResult)
+        }
+    }
+    
+    func fetchPhotoAtIndex(_ index:Int,
+                           _ totalImageCountNeeded: Int,
+                           _ fetchResult: PHFetchResult<PHAsset>) {
+        let requestOptions = PHImageRequestOptions()
+        requestOptions.isSynchronous = true
+        
+        PHImageManager.default().requestImage(for: fetchResult.object(at: index) as PHAsset,
+                                                 targetSize: self.frame.size,
+                                                 contentMode: PHImageContentMode.aspectFill,
+                                                 options: requestOptions,
+                                                 resultHandler: { (image, _) in
+            if let image = image {
+                // Add the returned image to your array
+                self.gallaryButton.setImage(image, for: .normal)
+            }
+        })
     }
 }
