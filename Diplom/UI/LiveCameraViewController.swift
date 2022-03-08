@@ -17,8 +17,8 @@ class LiveCameraViewController: UIViewController {
         static let scannerViewOffset: CGFloat = 8
     }
     
-    private let answerPanelView: AnswerPanelView = {
-        let view = AnswerPanelView()
+    private let answerPanelView: BottomPanelView = {
+        let view = BottomPanelView()
         return view
     }()
     
@@ -75,7 +75,7 @@ class LiveCameraViewController: UIViewController {
         
         answerPanelView.snp.makeConstraints { make in
             make.left.right.equalTo(view)
-            make.height.equalTo(AnswerPanelView.estimateHeight())
+            make.height.equalTo(BottomPanelView.estimateHeight())
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
@@ -85,6 +85,10 @@ class LiveCameraViewController: UIViewController {
         
         answerPanelView.doneAction = {
             print("doneAction")
+            let filterVC = InfoViewController()
+            filterVC.modalPresentationStyle = .custom
+            filterVC.transitioningDelegate = self
+            self.present(filterVC, animated: true, completion: nil)
         }
         
         answerPanelView.gallaryAction = { [weak self] in
@@ -144,5 +148,14 @@ extension LiveCameraViewController: UIImagePickerControllerDelegate, UINavigatio
         picker.allowsEditing = true
         picker.delegate = self
         self.present(picker, animated: true)
+    }
+}
+
+extension LiveCameraViewController: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController
+                                , presenting: UIViewController?,
+                                source: UIViewController) -> UIPresentationController? {
+        FilterPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

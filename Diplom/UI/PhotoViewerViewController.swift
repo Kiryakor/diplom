@@ -1,5 +1,5 @@
 //
-//  ChooseImageViewController.swift
+//  PhotoViewerViewController.swift
 //  Diplom
 //
 //  Created by KIRILL on 07.03.2022.
