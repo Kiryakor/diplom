@@ -23,12 +23,19 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         return view
     }()
     
+    let segmentControl: UISegmentedControl = {
+        let segment = UISegmentedControl(items: ["IMAGE_INFO".localized, "SIMULAR_PHOTO".localized])
+        segment.selectedSegmentIndex = 0
+        segment.addTarget(self, action: #selector(segmentControlAction), for: .valueChanged)
+        return segment
+    }()
+    
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = AppColor.backgroundColor
         setupViews()
     }
     
@@ -40,6 +47,10 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
     }
     
     func setupViews() {
+        view.addSubviews([
+            topView,
+            segmentControl,
+        ])
         view.addSubview(topView)
         topView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
@@ -53,11 +64,17 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
             make.centerX.equalToSuperview()
         }
         
+        segmentControl.snp.makeConstraints { make in
+            make.centerX.equalTo(self.view)
+            make.top.equalTo(self.topView.snp_bottomMargin).offset(-8)
+        }
+        
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         topView.addGestureRecognizer(panGesture)
     }
     
-    @objc func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
+    @objc
+    func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
 
         guard translation.y >= 0 else { return }
@@ -74,5 +91,11 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
                 }
             }
         }
+    }
+    
+    @objc
+    func segmentControlAction() {
+        let index = self.segmentControl.selectedSegmentIndex
+        print(index)
     }
 }
