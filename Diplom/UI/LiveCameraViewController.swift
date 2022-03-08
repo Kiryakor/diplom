@@ -114,10 +114,10 @@ extension LiveCameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate
                        from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
-        DiplomMLService.request(with: .imageBuffer(pixelBuffer)) { result in
+        DiplomMLService.request(with: .imageBuffer(pixelBuffer)) { [weak self] result in
             switch result {
             case .success(let value):
-                self.answerPanelView.title = value
+                self?.answerPanelView.title = value
             case .failure(let error):
                 print(error.localizedDescription)
             }

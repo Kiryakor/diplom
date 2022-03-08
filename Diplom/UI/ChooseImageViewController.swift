@@ -46,7 +46,7 @@ class ChooseImageViewController: UIViewController {
         
         self.view.addSubviews([
             imageView,
-            answerLabel
+            answerLabel,
         ])
         
         imageView.snp.makeConstraints { make in

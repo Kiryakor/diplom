@@ -77,6 +77,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		ED12100127D74BBB000C7492 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				ED120FFF27D673F8000C7492 /* DiplomMLService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		ED616CF42746B2420058669D = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +106,7 @@
 		ED616CFF2746B2420058669D /* Diplom */ = {
 			isa = PBXGroup;
 			children = (
+				ED12100127D74BBB000C7492 /* Service */,
 				EDC02DB2274838B4004EBFB0 /* Supported */,
 				ED7CD1162746C41F004EED4A /* UI */,
 				ED616D002746B2420058669D /* AppDelegate.swift */,
@@ -129,7 +138,6 @@
 				EDC02DB727483B7A004EBFB0 /* AppColor.swift */,
 				ED2B514927497CCF00C13E27 /* String + extension.swift */,
 				ED04A51C27777396003D533B /* AppImage.swift */,
-				ED120FFF27D673F8000C7492 /* DiplomMLService.swift */,
 			);
 			path = Supported;
 			sourceTree = "<group>";
