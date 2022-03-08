@@ -19,7 +19,6 @@
 		ED616D012746B2420058669D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D002746B2420058669D /* AppDelegate.swift */; };
 		ED616D032746B2420058669D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D022746B2420058669D /* SceneDelegate.swift */; };
 		ED616D052746B2420058669D /* LiveCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D042746B2420058669D /* LiveCameraViewController.swift */; };
-		ED616D082746B2420058669D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED616D062746B2420058669D /* Main.storyboard */; };
 		ED616D0A2746B2460058669D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED616D092746B2460058669D /* Assets.xcassets */; };
 		ED616D0D2746B2460058669D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED616D0B2746B2460058669D /* LaunchScreen.storyboard */; };
 		ED9F666027D5185E000784F8 /* DiplomML.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED9F665F27D5185E000784F8 /* DiplomML.mlmodel */; };
@@ -43,7 +42,6 @@
 		ED616D002746B2420058669D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED616D022746B2420058669D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ED616D042746B2420058669D /* LiveCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraViewController.swift; sourceTree = "<group>"; };
-		ED616D072746B2420058669D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED616D092746B2460058669D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED616D0C2746B2460058669D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED616D0E2746B2460058669D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				ED7CD1162746C41F004EED4A /* UI */,
 				ED616D002746B2420058669D /* AppDelegate.swift */,
 				ED616D022746B2420058669D /* SceneDelegate.swift */,
-				ED616D062746B2420058669D /* Main.storyboard */,
 				ED9F665F27D5185E000784F8 /* DiplomML.mlmodel */,
 				ED616D092746B2460058669D /* Assets.xcassets */,
 				ED616D0B2746B2460058669D /* LaunchScreen.storyboard */,
@@ -213,7 +210,6 @@
 			files = (
 				ED616D0D2746B2460058669D /* LaunchScreen.storyboard in Resources */,
 				ED616D0A2746B2460058669D /* Assets.xcassets in Resources */,
-				ED616D082746B2420058669D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,14 +283,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ED616D062746B2420058669D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED616D072746B2420058669D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ED616D0B2746B2460058669D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -431,7 +419,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7X982MAA37;
+				DEVELOPMENT_TEAM = ZQ27S689GF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Diplom/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -461,7 +449,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7X982MAA37;
+				DEVELOPMENT_TEAM = ZQ27S689GF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Diplom/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
