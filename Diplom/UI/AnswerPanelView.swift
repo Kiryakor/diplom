@@ -79,10 +79,10 @@ class AnswerPanelView: UIView {
     
     var title: String? {
         get {
-            return answerLabel.text
+            return self.answerLabel.text
         }
         set {
-            answerLabel.text = newValue
+            self.answerLabel.text = newValue
         }
     }
     
@@ -100,30 +100,30 @@ class AnswerPanelView: UIView {
         backgroundColor = AppColor.backgroundColor
         
         addSubviews([
-            answerLabel,
-            doneButton,
-            cancelButton,
-            gallaryButton,
+            self.answerLabel,
+            self.doneButton,
+            self.cancelButton,
+            self.gallaryButton,
         ])
         
-        doneButton.snp.makeConstraints { make in
+        self.doneButton.snp.makeConstraints { make in
             make.bottom.equalTo(-Constants.buttonSpacing)
             make.width.equalTo(Constants.buttonWidth)
             make.right.equalTo(snp_centerXWithinMargins).offset(-Constants.buttonSpacing)
         }
 
-        cancelButton.snp.makeConstraints { make in
+        self.cancelButton.snp.makeConstraints { make in
             make.bottom.equalTo(-Constants.buttonSpacing)
             make.width.equalTo(Constants.buttonWidth)
             make.left.equalTo(snp_centerXWithinMargins).offset(Constants.buttonSpacing)
         }
         
-        answerLabel.snp.makeConstraints { make in
+        self.answerLabel.snp.makeConstraints { make in
             make.top.left.equalTo(self).offset(Constants.titleSpacing)
             make.right.equalTo(self).offset(-Constants.titleSpacing)
         }
         
-        gallaryButton.snp.makeConstraints { make in
+        self.gallaryButton.snp.makeConstraints { make in
             make.width.height.equalTo(Constants.gallarySize)
             make.right.bottom.equalTo(-Constants.buttonSpacing)
         }

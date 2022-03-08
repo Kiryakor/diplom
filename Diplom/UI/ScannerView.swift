@@ -31,7 +31,7 @@ class ScannerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupLayout()
+        self.setupLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -42,19 +42,19 @@ class ScannerView: UIView {
     
     var image: UIImage? {
         set {
-            imageView.image = newValue
+            self.imageView.image = newValue
         }
         get {
-            return imageView.image
+            return self.imageView.image
         }
     }
     
     var title: String? {
         set {
-            titleLabel.text = newValue
+            self.titleLabel.text = newValue
         }
         get {
-            return titleLabel.text
+            return self.titleLabel.text
         }
     }
     
@@ -85,17 +85,17 @@ class ScannerView: UIView {
     
     private func setupLayout() {
         self.addSubviews([
-            imageView,
-            titleLabel,
+            self.imageView,
+            self.titleLabel,
         ])
         
-        imageView.snp.makeConstraints { make in
+        self.imageView.snp.makeConstraints { make in
             make.centerY.equalTo(self).offset(-Constants.contentOffset)
             make.height.width.equalTo(Constants.imageSize)
             make.centerX.equalTo(self)
         }
         
-        titleLabel.snp.makeConstraints { make in
+        self.titleLabel.snp.makeConstraints { make in
             make.centerY.equalTo(self).offset(Constants.contentOffset)
             make.centerX.equalTo(self)
             make.left.right.equalTo(self).inset(Constants.contentOffset)

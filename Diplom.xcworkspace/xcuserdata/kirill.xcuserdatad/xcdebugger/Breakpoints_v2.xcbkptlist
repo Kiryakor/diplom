@@ -3,22 +3,4 @@
    uuid = "B16FFC8D-1965-4C7F-B47C-960FD626797C"
    type = "0"
    version = "2.0">
-   <Breakpoints>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E6ED4832-00BD-4957-825F-B29B020E17C2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Diplom/UI/LiveCameraViewController.swift"
-            startingColumnNumber = "18"
-            endingColumnNumber = "18"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "setupLiveCamera()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-   </Breakpoints>
 </Bucket>

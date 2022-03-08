@@ -132,7 +132,7 @@ extension LiveCameraViewController: UIImagePickerControllerDelegate, UINavigatio
 
         if let image = info[.editedImage] as? UIImage {
             picker.dismiss(animated: true, completion: nil)
-            let view = ChooseImageViewController(with: image)
+            let view = PhotoViewerViewController(with: image)
             self.present(view, animated: true, completion: nil)
         } else {
             picker.dismiss(animated: true, completion: nil)

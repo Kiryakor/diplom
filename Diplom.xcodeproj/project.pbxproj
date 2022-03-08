@@ -10,13 +10,12 @@
 		735E0870BF1D5AFAB537BA58 /* Pods_Diplom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 314941C8F89F22EBC5DF6459 /* Pods_Diplom.framework */; };
 		ED04A51B277772EA003D533B /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04A51A277772EA003D533B /* ScannerView.swift */; };
 		ED04A51D27777396003D533B /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04A51C27777396003D533B /* AppImage.swift */; };
-		ED120FFE27D66C43000C7492 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED120FFD27D66C43000C7492 /* ChooseImageViewController.swift */; };
+		ED120FFE27D66C43000C7492 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED120FFD27D66C43000C7492 /* PhotoViewerViewController.swift */; };
 		ED12100027D673F8000C7492 /* DiplomMLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED120FFF27D673F8000C7492 /* DiplomMLService.swift */; };
 		ED2B514A27497CCF00C13E27 /* String + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B514927497CCF00C13E27 /* String + extension.swift */; };
 		ED616D012746B2420058669D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D002746B2420058669D /* AppDelegate.swift */; };
 		ED616D032746B2420058669D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D022746B2420058669D /* SceneDelegate.swift */; };
 		ED616D052746B2420058669D /* LiveCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D042746B2420058669D /* LiveCameraViewController.swift */; };
-		ED616D082746B2420058669D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED616D062746B2420058669D /* Main.storyboard */; };
 		ED616D0A2746B2460058669D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED616D092746B2460058669D /* Assets.xcassets */; };
 		ED616D0D2746B2460058669D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED616D0B2746B2460058669D /* LaunchScreen.storyboard */; };
 		ED9F666027D5185E000784F8 /* DiplomML.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED9F665F27D5185E000784F8 /* DiplomML.mlmodel */; };
@@ -30,14 +29,13 @@
 		314941C8F89F22EBC5DF6459 /* Pods_Diplom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diplom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED04A51A277772EA003D533B /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		ED04A51C27777396003D533B /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
-		ED120FFD27D66C43000C7492 /* ChooseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageViewController.swift; sourceTree = "<group>"; };
+		ED120FFD27D66C43000C7492 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		ED120FFF27D673F8000C7492 /* DiplomMLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiplomMLService.swift; sourceTree = "<group>"; };
 		ED2B514927497CCF00C13E27 /* String + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extension.swift"; sourceTree = "<group>"; };
 		ED616CFD2746B2420058669D /* Diplom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diplom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED616D002746B2420058669D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED616D022746B2420058669D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ED616D042746B2420058669D /* LiveCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraViewController.swift; sourceTree = "<group>"; };
-		ED616D072746B2420058669D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED616D092746B2460058669D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED616D0C2746B2460058669D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED616D0E2746B2460058669D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				ED7CD1162746C41F004EED4A /* UI */,
 				ED616D002746B2420058669D /* AppDelegate.swift */,
 				ED616D022746B2420058669D /* SceneDelegate.swift */,
-				ED616D062746B2420058669D /* Main.storyboard */,
 				ED9F665F27D5185E000784F8 /* DiplomML.mlmodel */,
 				ED616D092746B2460058669D /* Assets.xcassets */,
 				ED616D0B2746B2460058669D /* LaunchScreen.storyboard */,
@@ -126,7 +123,7 @@
 				ED616D042746B2420058669D /* LiveCameraViewController.swift */,
 				EDC02DB52748397B004EBFB0 /* AnswerPanelView.swift */,
 				ED04A51A277772EA003D533B /* ScannerView.swift */,
-				ED120FFD27D66C43000C7492 /* ChooseImageViewController.swift */,
+				ED120FFD27D66C43000C7492 /* PhotoViewerViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -204,7 +201,6 @@
 			files = (
 				ED616D0D2746B2460058669D /* LaunchScreen.storyboard in Resources */,
 				ED616D0A2746B2460058669D /* Assets.xcassets in Resources */,
-				ED616D082746B2420058669D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +260,7 @@
 				ED616D012746B2420058669D /* AppDelegate.swift in Sources */,
 				ED2B514A27497CCF00C13E27 /* String + extension.swift in Sources */,
 				EDC02DB4274838CF004EBFB0 /* UIView + extention.swift in Sources */,
-				ED120FFE27D66C43000C7492 /* ChooseImageViewController.swift in Sources */,
+				ED120FFE27D66C43000C7492 /* PhotoViewerViewController.swift in Sources */,
 				EDC02DB827483B7A004EBFB0 /* AppColor.swift in Sources */,
 				ED616D032746B2420058669D /* SceneDelegate.swift in Sources */,
 				EDC02DB62748397B004EBFB0 /* AnswerPanelView.swift in Sources */,
@@ -275,14 +271,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ED616D062746B2420058669D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED616D072746B2420058669D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ED616D0B2746B2460058669D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -419,12 +407,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7X982MAA37;
+				DEVELOPMENT_TEAM = ZQ27S689GF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Diplom/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Разрешите доступ к камере";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Разрешите доступ к фоткам";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -450,12 +439,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7X982MAA37;
+				DEVELOPMENT_TEAM = ZQ27S689GF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Diplom/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Разрешите доступ к камере";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Разрешите доступ к фоткам";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
