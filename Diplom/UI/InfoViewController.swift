@@ -23,6 +23,17 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         return view
     }()
     
+    let infoView: InfoView = {
+        let view = InfoView()
+        return view
+    }()
+    
+    let simularView: SimularView = {
+        let view = SimularView()
+        view.isHidden = true
+        return view
+    }()
+    
     let segmentControl: UISegmentedControl = {
         let segment = UISegmentedControl(items: ["IMAGE_INFO".localized, "SIMULAR_PHOTO".localized])
         segment.selectedSegmentIndex = 0
@@ -32,6 +43,19 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
+    
+    var request: String
+    
+    init(with request: String) {
+        self.request = request
+        self.simularView.title = request
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +74,8 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         view.addSubviews([
             topView,
             segmentControl,
+            infoView,
+            simularView,
         ])
         view.addSubview(topView)
         topView.snp.makeConstraints { (make) in
@@ -71,6 +97,16 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         topView.addGestureRecognizer(panGesture)
+        
+        infoView.snp.makeConstraints { make in
+            make.left.bottom.right.equalTo(self.view)
+            make.top.equalTo(segmentControl.snp_bottomMargin).offset(16)
+        }
+        
+        simularView.snp.makeConstraints { make in
+            make.left.bottom.right.equalTo(self.view)
+            make.top.equalTo(segmentControl.snp_bottomMargin).offset(16)
+        }
     }
     
     @objc
@@ -96,6 +132,13 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
     @objc
     func segmentControlAction() {
         let index = self.segmentControl.selectedSegmentIndex
-        print(index)
+        
+        if index == 0 {
+            self.infoView.isHidden = false
+            self.simularView.isHidden = true
+        } else if index == 1 {
+            self.simularView.isHidden = false
+            self.infoView.isHidden = true
+        }
     }
 }

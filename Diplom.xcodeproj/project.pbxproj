@@ -16,6 +16,9 @@
 		ED12100727D7A8E8000C7492 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED12100627D7A8E8000C7492 /* InfoViewController.swift */; };
 		ED2B514A27497CCF00C13E27 /* String + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B514927497CCF00C13E27 /* String + extension.swift */; };
 		ED5197DB27D7AA5D0099A6DB /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5197DA27D7AA5D0099A6DB /* PhotoViewerViewController.swift */; };
+		ED56CF4F27DB6F0D005DB28D /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56CF4E27DB6F0D005DB28D /* InfoView.swift */; };
+		ED56CF5127DB6F50005DB28D /* SimularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56CF5027DB6F50005DB28D /* SimularView.swift */; };
+		ED56CF5327DB70FF005DB28D /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56CF5227DB70FF005DB28D /* FirebaseService.swift */; };
 		ED616D012746B2420058669D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D002746B2420058669D /* AppDelegate.swift */; };
 		ED616D032746B2420058669D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D022746B2420058669D /* SceneDelegate.swift */; };
 		ED616D052746B2420058669D /* LiveCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616D042746B2420058669D /* LiveCameraViewController.swift */; };
@@ -39,6 +42,9 @@
 		ED12100627D7A8E8000C7492 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		ED2B514927497CCF00C13E27 /* String + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extension.swift"; sourceTree = "<group>"; };
 		ED5197DA27D7AA5D0099A6DB /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
+		ED56CF4E27DB6F0D005DB28D /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		ED56CF5027DB6F50005DB28D /* SimularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimularView.swift; sourceTree = "<group>"; };
+		ED56CF5227DB70FF005DB28D /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		ED616CFD2746B2420058669D /* Diplom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diplom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED616D002746B2420058669D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED616D022746B2420058669D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +94,7 @@
 			children = (
 				ED120FFF27D673F8000C7492 /* DiplomMLService.swift */,
 				ED12100227D7A346000C7492 /* PHPhotosService.swift */,
+				ED56CF5227DB70FF005DB28D /* FirebaseService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -136,6 +143,8 @@
 				ED04A51A277772EA003D533B /* ScannerView.swift */,
 				ED12100627D7A8E8000C7492 /* InfoViewController.swift */,
 				ED5197DA27D7AA5D0099A6DB /* PhotoViewerViewController.swift */,
+				ED56CF4E27DB6F0D005DB28D /* InfoView.swift */,
+				ED56CF5027DB6F50005DB28D /* SimularView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -266,9 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED56CF4F27DB6F0D005DB28D /* InfoView.swift in Sources */,
 				ED04A51B277772EA003D533B /* ScannerView.swift in Sources */,
 				ED12100027D673F8000C7492 /* DiplomMLService.swift in Sources */,
 				ED5197DB27D7AA5D0099A6DB /* PhotoViewerViewController.swift in Sources */,
+				ED56CF5327DB70FF005DB28D /* FirebaseService.swift in Sources */,
 				ED12100327D7A346000C7492 /* PHPhotosService.swift in Sources */,
 				ED616D052746B2420058669D /* LiveCameraViewController.swift in Sources */,
 				ED12100727D7A8E8000C7492 /* InfoViewController.swift in Sources */,
@@ -281,6 +292,7 @@
 				ED616D032746B2420058669D /* SceneDelegate.swift in Sources */,
 				EDC02DB62748397B004EBFB0 /* BottomPanelView.swift in Sources */,
 				ED04A51D27777396003D533B /* AppImage.swift in Sources */,
+				ED56CF5127DB6F50005DB28D /* SimularView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

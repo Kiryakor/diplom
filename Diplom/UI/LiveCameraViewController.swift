@@ -83,9 +83,10 @@ class LiveCameraViewController: UIViewController {
             print("cancelAction")
         }
         
-        answerPanelView.doneAction = {
-            print("doneAction")
-            let filterVC = InfoViewController()
+        answerPanelView.doneAction = { [weak self] in
+            guard let self = self else { return }
+            
+            let filterVC = InfoViewController(with: self.answerPanelView.title ?? "")
             filterVC.modalPresentationStyle = .custom
             filterVC.transitioningDelegate = self
             self.present(filterVC, animated: true, completion: nil)
