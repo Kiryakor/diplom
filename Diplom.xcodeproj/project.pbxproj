@@ -22,6 +22,7 @@
 		ED616D0A2746B2460058669D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED616D092746B2460058669D /* Assets.xcassets */; };
 		ED616D0D2746B2460058669D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED616D0B2746B2460058669D /* LaunchScreen.storyboard */; };
 		ED9F666027D5185E000784F8 /* DiplomML.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED9F665F27D5185E000784F8 /* DiplomML.mlmodel */; };
+		EDB1E7C727DB264100C6035F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDB1E7C627DB264100C6035F /* GoogleService-Info.plist */; };
 		EDC02DB4274838CF004EBFB0 /* UIView + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC02DB3274838CF004EBFB0 /* UIView + extention.swift */; };
 		EDC02DB62748397B004EBFB0 /* BottomPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC02DB52748397B004EBFB0 /* BottomPanelView.swift */; };
 		EDC02DB827483B7A004EBFB0 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC02DB727483B7A004EBFB0 /* AppColor.swift */; };
@@ -46,6 +47,7 @@
 		ED616D0C2746B2460058669D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED616D0E2746B2460058669D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED9F665F27D5185E000784F8 /* DiplomML.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DiplomML.mlmodel; sourceTree = "<group>"; };
+		EDB1E7C627DB264100C6035F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDC02DB3274838CF004EBFB0 /* UIView + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + extention.swift"; sourceTree = "<group>"; };
 		EDC02DB52748397B004EBFB0 /* BottomPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPanelView.swift; sourceTree = "<group>"; };
 		EDC02DB727483B7A004EBFB0 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				ED616D092746B2460058669D /* Assets.xcassets */,
 				ED616D0B2746B2460058669D /* LaunchScreen.storyboard */,
 				ED616D0E2746B2460058669D /* Info.plist */,
+				EDB1E7C627DB264100C6035F /* GoogleService-Info.plist */,
 			);
 			path = Diplom;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			files = (
 				ED616D0D2746B2460058669D /* LaunchScreen.storyboard in Resources */,
 				ED616D0A2746B2460058669D /* Assets.xcassets in Resources */,
+				EDB1E7C727DB264100C6035F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
