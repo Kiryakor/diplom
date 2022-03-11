@@ -7,7 +7,21 @@
 
 import UIKit
 
-class InfoView: UIView {
+class InfoView: UIView,
+                UICollectionViewDelegate,
+                UICollectionViewDataSource,
+                UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = .red
+        return cell
+    }
+    
     
     init() {
         super.init(frame: .zero)

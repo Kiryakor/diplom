@@ -16,12 +16,9 @@ class PhotoViewerViewController: UIViewController {
         return view
     }()
     
-    private let answerLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.textColor = AppColor.textColor
-        label.textAlignment = .center
-        return label
+    private let answerPanelView: BottomPanelView = {
+        let view = BottomPanelView()
+        return view
     }()
     
     var currentImage: UIImage? {
@@ -32,7 +29,7 @@ class PhotoViewerViewController: UIViewController {
             DiplomMLService.request(with: .image(image)) { [weak self] result in
                 switch result {
                 case .success(let value):
-                    self?.answerLabel.text = value
+                    self?.answerPanelView.title = value
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -63,16 +60,41 @@ class PhotoViewerViewController: UIViewController {
         
         self.view.addSubviews([
             self.imageView,
-            self.answerLabel,
+            self.answerPanelView,
         ])
         
         self.imageView.snp.makeConstraints { make in
             make.top.left.bottom.right.equalTo(self.view)
         }
         
-        self.answerLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(self.view)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottomMargin).offset(-8)
+        self.answerPanelView.snp.makeConstraints { make in
+            make.left.right.equalTo(view)
+            make.height.equalTo(BottomPanelView.estimateHeight())
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
+        
+        self.answerPanelView.cancelAction = {
+            print("cancelAction")
+        }
+        
+        self.answerPanelView.hideGallatyButton()
+        
+        self.answerPanelView.doneAction = { [weak self] in
+            guard let self = self else { return }
+            
+            let filterVC = InfoViewController(with: self.answerPanelView.title ?? "")
+            filterVC.modalPresentationStyle = .custom
+            filterVC.transitioningDelegate = self
+            self.present(filterVC, animated: true, completion: nil)
+        }
+    }
+}
+
+extension PhotoViewerViewController: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController,
+                                presenting: UIViewController?,
+                                source: UIViewController) -> UIPresentationController? {
+        FilterPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

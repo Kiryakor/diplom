@@ -66,7 +66,7 @@ class BottomPanelView: UIView {
     init() {
         super.init(frame: .zero)
 
-        setupUI()
+        self.setupUI()
         
         PHPhotosService.getFetchPhotos(count: 1) { [weak self] result in
             switch result {
@@ -105,9 +105,9 @@ class BottomPanelView: UIView {
     // MARK: - Private
     
     private func setupUI() {
-        backgroundColor = AppColor.backgroundColor
+        self.backgroundColor = AppColor.backgroundColor
         
-        addSubviews([
+        self.addSubviews([
             self.answerLabel,
             self.doneButton,
             self.cancelButton,
@@ -139,16 +139,20 @@ class BottomPanelView: UIView {
     
     @objc
     private func tapCancelButton() {
-        cancelAction?()
+        self.cancelAction?()
     }
     
     @objc
     private func tapDoneButton() {
-        doneAction?()
+        self.doneAction?()
     }
     
     @objc
     private func tapGallaryButton() {
-        gallaryAction?()
+        self.gallaryAction?()
+    }
+    
+    func hideGallatyButton() {
+        self.gallaryButton.isHidden = true
     }
 }

@@ -36,8 +36,8 @@ class SimularView: UIView {
                 guard let self = self else { return }
                 
                 switch result {
-                case .success(let snapshot):
-                    self.infoLabel.text = snapshot.value as? String
+                case .success(let description):
+                    self.infoLabel.text = description
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -48,24 +48,28 @@ class SimularView: UIView {
     init() {
         super.init(frame: .zero)
         
+        self.setupUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupUI() {
         self.addSubviews([
-            titleLabel,
-            infoLabel,
+            self.titleLabel,
+            self.infoLabel,
         ])
         
-        titleLabel.snp.makeConstraints { make in
+        self.titleLabel.snp.makeConstraints { make in
             make.height.equalTo(titleLabel.font.lineHeight)
             make.top.equalTo(self).offset(8)
             make.left.right.equalTo(self).inset(8)
         }
         
-        infoLabel.snp.makeConstraints { make in
+        self.infoLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp_bottomMargin).offset(8)
             make.left.bottom.right.equalTo(self).inset(8)
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

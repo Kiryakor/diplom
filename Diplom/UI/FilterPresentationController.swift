@@ -9,8 +9,8 @@ import UIKit
 
 class FilterPresentationController: UIPresentationController {
     
-    let blurEffectView: UIVisualEffectView!
-    var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
+    private let blurEffectView: UIVisualEffectView!
+    private var tapGestureRecognizer = UITapGestureRecognizer()
     
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         let blurEffect = UIBlurEffect(style: .dark)
@@ -56,7 +56,7 @@ class FilterPresentationController: UIPresentationController {
     }
     
     @objc
-    func dismissController() {
+    private func dismissController() {
         self.presentedViewController.dismiss(animated: true, completion: nil)
     }
 }

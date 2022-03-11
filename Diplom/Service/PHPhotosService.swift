@@ -10,10 +10,7 @@ import UIKit
 
 final class PHPhotosService: NSObject {
     
-    enum Errors: Error {
-    }
-    
-    static func getFetchPhotos(count: Int, complition: @escaping (Result<[UIImage], Errors>) -> Void) {
+    static func getFetchPhotos(count: Int, complition: @escaping (Result<[UIImage], Error>) -> Void) {
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: false)]
         fetchOptions.fetchLimit = count
@@ -37,7 +34,7 @@ final class PHPhotosService: NSObject {
     static private func fetchPhotoAtIndex(_ index:Int,
                                           _ totalImageCountNeeded: Int,
                                           _ fetchResult: PHFetchResult<PHAsset>,
-                                          complition: @escaping (Result<UIImage, Errors>) -> Void) {
+                                          complition: @escaping (Result<UIImage, Error>) -> Void) {
         let requestOptions = PHImageRequestOptions()
         requestOptions.isSynchronous = true
         

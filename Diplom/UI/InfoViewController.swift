@@ -9,32 +9,32 @@ import UIKit
 
 class InfoViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
-    let topView: UIView = {
+    private let topView: UIView = {
         let view = UIView()
         view.isUserInteractionEnabled = true
         view.backgroundColor = .clear
         return view
     }()
     
-    let topDarkLine: UIView = {
+    private let topDarkLine: UIView = {
         let view = UIView()
         view.backgroundColor = .darkGray
         view.layer.cornerRadius = 3
         return view
     }()
     
-    let infoView: InfoView = {
+    private let infoView: InfoView = {
         let view = InfoView()
         return view
     }()
     
-    let simularView: SimularView = {
+    private let simularView: SimularView = {
         let view = SimularView()
         view.isHidden = true
         return view
     }()
     
-    let segmentControl: UISegmentedControl = {
+    private let segmentControl: UISegmentedControl = {
         let segment = UISegmentedControl(items: ["IMAGE_INFO".localized, "SIMULAR_PHOTO".localized])
         segment.selectedSegmentIndex = 0
         segment.addTarget(self, action: #selector(segmentControlAction), for: .valueChanged)
@@ -59,63 +59,64 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = AppColor.backgroundColor
-        setupViews()
+        self.view.backgroundColor = AppColor.backgroundColor
+        self.setupViews()
     }
     
     override func viewDidLayoutSubviews() {
-        if !hasSetPointOrigin {
-            hasSetPointOrigin = true
-            pointOrigin = self.view.frame.origin
+        if !self.hasSetPointOrigin {
+            self.hasSetPointOrigin = true
+            self.pointOrigin = self.view.frame.origin
         }
     }
     
-    func setupViews() {
-        view.addSubviews([
-            topView,
-            segmentControl,
-            infoView,
-            simularView,
+    private func setupViews() {
+        self.view.addSubviews([
+            self.topView,
+            self.segmentControl,
+            self.infoView,
+            self.simularView,
         ])
-        view.addSubview(topView)
-        topView.snp.makeConstraints { (make) in
+        
+        self.topView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
             make.height.equalTo(50)
         }
-        topView.addSubview(topDarkLine)
-        topDarkLine.snp.makeConstraints { (make) in
+        self.topView.addSubview(topDarkLine)
+        
+        self.topDarkLine.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(12)
             make.height.equalTo(6)
             make.width.equalToSuperview().multipliedBy(0.15)
             make.centerX.equalToSuperview()
         }
         
-        segmentControl.snp.makeConstraints { make in
+        self.segmentControl.snp.makeConstraints { make in
             make.centerX.equalTo(self.view)
             make.top.equalTo(self.topView.snp_bottomMargin).offset(-8)
         }
         
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
-        topView.addGestureRecognizer(panGesture)
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.panGestureRecognizerAction))
+        self.topView.addGestureRecognizer(panGesture)
         
-        infoView.snp.makeConstraints { make in
+        self.infoView.snp.makeConstraints { make in
             make.left.bottom.right.equalTo(self.view)
             make.top.equalTo(segmentControl.snp_bottomMargin).offset(16)
         }
         
-        simularView.snp.makeConstraints { make in
+        self.simularView.snp.makeConstraints { make in
             make.left.bottom.right.equalTo(self.view)
             make.top.equalTo(segmentControl.snp_bottomMargin).offset(16)
         }
     }
     
     @objc
-    func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
+    private func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
 
         guard translation.y >= 0 else { return }
 
-        view.frame.origin = CGPoint(x: 0, y: self.pointOrigin!.y + translation.y)
+        self.view.frame.origin = CGPoint(x: 0, y: self.pointOrigin!.y + translation.y)
 
         if sender.state == .ended {
             let dragVelocity = sender.velocity(in: view)
@@ -130,7 +131,7 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
     }
     
     @objc
-    func segmentControlAction() {
+    private func segmentControlAction() {
         let index = self.segmentControl.selectedSegmentIndex
         
         if index == 0 {

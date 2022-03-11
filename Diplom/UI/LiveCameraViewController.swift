@@ -73,17 +73,17 @@ class LiveCameraViewController: UIViewController {
     private func setupAnswerPanelView() {
         view.addSubview(answerPanelView)
         
-        answerPanelView.snp.makeConstraints { make in
+        self.answerPanelView.snp.makeConstraints { make in
             make.left.right.equalTo(view)
             make.height.equalTo(BottomPanelView.estimateHeight())
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
-        answerPanelView.cancelAction = {
+        self.answerPanelView.cancelAction = {
             print("cancelAction")
         }
         
-        answerPanelView.doneAction = { [weak self] in
+        self.answerPanelView.doneAction = { [weak self] in
             guard let self = self else { return }
             
             let filterVC = InfoViewController(with: self.answerPanelView.title ?? "")
@@ -92,7 +92,7 @@ class LiveCameraViewController: UIViewController {
             self.present(filterVC, animated: true, completion: nil)
         }
         
-        answerPanelView.gallaryAction = { [weak self] in
+        self.answerPanelView.gallaryAction = { [weak self] in
             guard let self = self else { return }
             self.showImagePicker()
         }
@@ -154,8 +154,8 @@ extension LiveCameraViewController: UIImagePickerControllerDelegate, UINavigatio
 
 extension LiveCameraViewController: UIViewControllerTransitioningDelegate {
     
-    func presentationController(forPresented presented: UIViewController
-                                , presenting: UIViewController?,
+    func presentationController(forPresented presented: UIViewController,
+                                presenting: UIViewController?,
                                 source: UIViewController) -> UIPresentationController? {
         FilterPresentationController(presentedViewController: presented, presenting: presenting)
     }

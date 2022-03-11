@@ -58,29 +58,6 @@ class ScannerView: UIView {
         }
     }
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-        
-        context.saveGState()
-        defer { context.restoreGState() }
-        
-//        let rectTopLeft = CGRect(x: 0, y: 0, width: 32, height: 32)
-//        let path = UIBezierPath(
-//            roundedRect: rectTopLeft,
-//            byRoundingCorners: [.topLeft, .topRight],
-//            cornerRadii: CGSize(width: 4, height: 4)
-//        )
-        
-//        context.addPath(path.cgPath)
-//        context.closePath()
-    
-//        context.setLineWidth(5)
-//        context.setStrokeColor(AppColor.white)
-        context.strokePath()
-    }
-    
     // MARK: - Private
     
     private func setupLayout() {
