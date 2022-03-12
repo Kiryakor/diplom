@@ -51,6 +51,18 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         self.simularView.title = request
         
         super.init(nibName: nil, bundle: nil)
+        
+        FirebaseService.request(with: request) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let content):
+                self.simularView.infoText = "\t\(content.description?.capitalized ?? "")"
+                self.infoView.images = content.images
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     required init?(coder: NSCoder) {

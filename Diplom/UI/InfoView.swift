@@ -27,6 +27,12 @@ class InfoView: UIView,
         return view
     }()
     
+    var images: [String]? = [] {
+        willSet {
+            self.collectionView.reloadData()
+        }
+    }
+    
     init() {
         super.init(frame: .zero)
 
@@ -57,7 +63,7 @@ class InfoView: UIView,
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.images?.count ?? 0
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -69,7 +75,7 @@ class InfoView: UIView,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! InfoViewCell
         cell.clipsToBounds = true
         cell.layer.cornerRadius = 10
-        cell.imageName = "sobor1.jpg"
+        cell.imageName = self.images?[indexPath.row] ?? nil
         return cell
     }
     

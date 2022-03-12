@@ -25,24 +25,12 @@ class SimularView: UIView {
     var title: String? {
         willSet {
             self.titleLabel.text = newValue
-            
-            guard let newValue = newValue else {
-                self.infoTextView.text = nil
-                return
-            }
-            
-            guard !newValue.isEmpty else { return }
-            
-            FirebaseService.request(with: newValue) { [weak self] result in
-                guard let self = self else { return }
-                
-                switch result {
-                case .success(let description):
-                    self.infoTextView.text = "\t\(description?.capitalized ?? "")"
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }
+        }
+    }
+    
+    var infoText: String? {
+        willSet {
+            self.infoTextView.text = newValue
         }
     }
     
