@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SimularView: UIView {
+class TitleDescriptionView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()

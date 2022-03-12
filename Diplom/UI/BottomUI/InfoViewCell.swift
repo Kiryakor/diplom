@@ -11,6 +11,7 @@ class InfoViewCell: UICollectionViewCell {
     
     private let imageView: UIImageView = {
         let view = UIImageView()
+        view.image = UIImage(named: "placeholder")
         view.contentMode = .scaleAspectFill
         return view
     }()

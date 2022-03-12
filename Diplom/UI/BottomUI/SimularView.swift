@@ -1,5 +1,5 @@
 //
-//  InfoView.swift
+//  SimularView.swift
 //  Diplom
 //
 //  Created by KIRILL on 11.03.2022.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class InfoView: UIView,
-                UICollectionViewDelegate,
-                UICollectionViewDataSource,
-                UICollectionViewDelegateFlowLayout {
-
+class SimularView: UIView,
+                   UICollectionViewDelegate,
+                   UICollectionViewDataSource,
+                   UICollectionViewDelegateFlowLayout {
+    
     private enum Constants {
         static let spacing: CGFloat = 8
     }
