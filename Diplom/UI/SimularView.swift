@@ -16,8 +16,9 @@ class SimularView: UIView {
         return label
     }()
     
-    private let infoLabel: UITextView = {
+    private let infoTextView: UITextView = {
         let label = UITextView()
+        label.isEditable = false
         return label
     }()
     
@@ -26,7 +27,7 @@ class SimularView: UIView {
             self.titleLabel.text = newValue
             
             guard let newValue = newValue else {
-                self.infoLabel.text = nil
+                self.infoTextView.text = nil
                 return
             }
             
@@ -37,7 +38,7 @@ class SimularView: UIView {
                 
                 switch result {
                 case .success(let description):
-                    self.infoLabel.text = description
+                    self.infoTextView.text = "\t\(description?.capitalized ?? "")"
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -58,7 +59,7 @@ class SimularView: UIView {
     private func setupUI() {
         self.addSubviews([
             self.titleLabel,
-            self.infoLabel,
+            self.infoTextView,
         ])
         
         self.titleLabel.snp.makeConstraints { make in
@@ -67,7 +68,7 @@ class SimularView: UIView {
             make.left.right.equalTo(self).inset(8)
         }
         
-        self.infoLabel.snp.makeConstraints { make in
+        self.infoTextView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp_bottomMargin).offset(8)
             make.left.bottom.right.equalTo(self).inset(8)
         }

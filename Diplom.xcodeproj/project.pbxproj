@@ -10,6 +10,7 @@
 		735E0870BF1D5AFAB537BA58 /* Pods_Diplom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 314941C8F89F22EBC5DF6459 /* Pods_Diplom.framework */; };
 		ED04A51B277772EA003D533B /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04A51A277772EA003D533B /* ScannerView.swift */; };
 		ED04A51D27777396003D533B /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04A51C27777396003D533B /* AppImage.swift */; };
+		ED07B7D827DC84F500775FD3 /* InfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07B7D727DC84F500775FD3 /* InfoViewCell.swift */; };
 		ED12100027D673F8000C7492 /* DiplomMLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED120FFF27D673F8000C7492 /* DiplomMLService.swift */; };
 		ED12100327D7A346000C7492 /* PHPhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED12100227D7A346000C7492 /* PHPhotosService.swift */; };
 		ED12100527D7A87A000C7492 /* FilterPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED12100427D7A87A000C7492 /* FilterPresentationController.swift */; };
@@ -36,6 +37,7 @@
 		314941C8F89F22EBC5DF6459 /* Pods_Diplom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diplom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED04A51A277772EA003D533B /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		ED04A51C27777396003D533B /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
+		ED07B7D727DC84F500775FD3 /* InfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewCell.swift; sourceTree = "<group>"; };
 		ED120FFF27D673F8000C7492 /* DiplomMLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiplomMLService.swift; sourceTree = "<group>"; };
 		ED12100227D7A346000C7492 /* PHPhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPhotosService.swift; sourceTree = "<group>"; };
 		ED12100427D7A87A000C7492 /* FilterPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPresentationController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				ED5197DA27D7AA5D0099A6DB /* PhotoViewerViewController.swift */,
 				ED56CF4E27DB6F0D005DB28D /* InfoView.swift */,
 				ED56CF5027DB6F50005DB28D /* SimularView.swift */,
+				ED07B7D727DC84F500775FD3 /* InfoViewCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				EDC02DB4274838CF004EBFB0 /* UIView + extention.swift in Sources */,
 				EDC02DB827483B7A004EBFB0 /* AppColor.swift in Sources */,
 				ED616D032746B2420058669D /* SceneDelegate.swift in Sources */,
+				ED07B7D827DC84F500775FD3 /* InfoViewCell.swift in Sources */,
 				EDC02DB62748397B004EBFB0 /* BottomPanelView.swift in Sources */,
 				ED04A51D27777396003D533B /* AppImage.swift in Sources */,
 				ED56CF5127DB6F50005DB28D /* SimularView.swift in Sources */,
