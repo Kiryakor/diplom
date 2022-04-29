@@ -24,13 +24,13 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         return view
     }()
     
-    private let infoView: InfoView = {
-        let view = InfoView()
+    private let simularView: SimularView = {
+        let view = SimularView()
         return view
     }()
     
-    private let simularView: SimularView = {
-        let view = SimularView()
+    private let infoView: TitleDescriptionView = {
+        let view = TitleDescriptionView()
         view.isHidden = true
         return view
     }()
@@ -55,7 +55,7 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     init(with request: String) {
         self.request = request
-        self.simularView.title = request
+        self.infoView.title = request
         
         super.init(nibName: nil, bundle: nil)
         
@@ -64,8 +64,8 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
             
             switch result {
             case .success(let content):
-                self.simularView.infoText = "\t\(content.description?.capitalized ?? "")"
-                self.infoView.images = content.images
+                self.infoView.infoText = "\t\(content.description?.capitalized ?? "")"
+                self.simularView.images = content.images
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -95,6 +95,7 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
             self.segmentsScrollView,
             self.infoView,
             self.simularView,
+            self.infoView,
         ])
         
         self.topView.snp.makeConstraints { (make) in
@@ -119,12 +120,12 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.panGestureRecognizerAction))
         self.topView.addGestureRecognizer(panGesture)
         
-        self.infoView.snp.makeConstraints { make in
+        self.simularView.snp.makeConstraints { make in
             make.left.bottom.right.equalTo(self.view)
             make.top.equalTo(segmentsScrollView.snp_bottomMargin).offset(16)
         }
         
-        self.simularView.snp.makeConstraints { make in
+        self.infoView.snp.makeConstraints { make in
             make.left.bottom.right.equalTo(self.view)
             make.top.equalTo(segmentsScrollView.snp_bottomMargin).offset(16)
         }
@@ -155,9 +156,6 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         let index = self.segmentsScrollView.selectedSegmentIndex
         
         if index == 0 {
-            self.infoView.isHidden = false
-            self.simularView.isHidden = true
-        } else if index == 1 {
             self.simularView.isHidden = false
             self.infoView.isHidden = true
         } else if index == 2 {
