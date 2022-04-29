@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ScrollableSegmentedControl
 
 class InfoViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
@@ -34,11 +35,17 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         return view
     }()
     
-    private let segmentControl: UISegmentedControl = {
-        let segment = UISegmentedControl(items: ["IMAGE_INFO".localized, "SIMULAR_PHOTO".localized])
-        segment.selectedSegmentIndex = 0
-        segment.addTarget(self, action: #selector(segmentControlAction), for: .valueChanged)
-        return segment
+    private let segmentsScrollView: ScrollableSegmentedControl = {
+        let segmentsScrollView = ScrollableSegmentedControl(frame: .zero)
+        segmentsScrollView.segmentStyle = .textOnly
+        segmentsScrollView.insertSegment(withTitle: "IMAGE_INFO".localized, at: 0)
+        segmentsScrollView.insertSegment(withTitle: "SIMULAR_PHOTO".localized, at: 1)
+        segmentsScrollView.insertSegment(withTitle: "AUDIO_INFO".localized, at: 2)
+        segmentsScrollView.selectedSegmentIndex = 0
+        segmentsScrollView.underlineSelected = true
+        segmentsScrollView.fixedSegmentWidth = false
+        segmentsScrollView.addTarget(self, action: #selector(segmentControlAction), for: .valueChanged)
+        return segmentsScrollView
     }()
     
     var hasSetPointOrigin = false
@@ -85,7 +92,7 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
     private func setupViews() {
         self.view.addSubviews([
             self.topView,
-            self.segmentControl,
+            self.segmentsScrollView,
             self.infoView,
             self.simularView,
         ])
@@ -103,9 +110,10 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
             make.centerX.equalToSuperview()
         }
         
-        self.segmentControl.snp.makeConstraints { make in
-            make.centerX.equalTo(self.view)
+        self.segmentsScrollView.snp.makeConstraints { make in
             make.top.equalTo(self.topView.snp_bottomMargin).offset(-8)
+            make.height.equalTo(44)
+            make.left.right.equalTo(self.view)
         }
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.panGestureRecognizerAction))
@@ -113,12 +121,12 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         
         self.infoView.snp.makeConstraints { make in
             make.left.bottom.right.equalTo(self.view)
-            make.top.equalTo(segmentControl.snp_bottomMargin).offset(16)
+            make.top.equalTo(segmentsScrollView.snp_bottomMargin).offset(16)
         }
         
         self.simularView.snp.makeConstraints { make in
             make.left.bottom.right.equalTo(self.view)
-            make.top.equalTo(segmentControl.snp_bottomMargin).offset(16)
+            make.top.equalTo(segmentsScrollView.snp_bottomMargin).offset(16)
         }
     }
     
@@ -144,7 +152,7 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     @objc
     private func segmentControlAction() {
-        let index = self.segmentControl.selectedSegmentIndex
+        let index = self.segmentsScrollView.selectedSegmentIndex
         
         if index == 0 {
             self.infoView.isHidden = false
@@ -152,6 +160,20 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         } else if index == 1 {
             self.simularView.isHidden = false
             self.infoView.isHidden = true
+        } else if index == 2 {
+            self.simularView.isHidden = true
+            self.infoView.isHidden = true
+            
+            let alert = UIAlertController(title: nil, message: "В процессе разработки", preferredStyle: .actionSheet)
+            let cancelAction =  UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+//            toDo запилить
+//            import AVKit
+//            let synthesizer = AVSpeechSynthesizer()
+//            let utterance = AVSpeechUtterance(string: "Привет. Это пример.")
+//            utterance.voice = AVSpeechSynthesisVoice(language: "ru-RU")
+//            synthesizer.speak(utterance)
         }
     }
 }

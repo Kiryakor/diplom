@@ -8,6 +8,7 @@ target 'Diplom' do
 	pod 'Firebase/Database', '~> 8.5.0'
 	pod 'Firebase/Storage', '~> 8.5.0'
 	pod 'Firebase/Installations', '~> 8.5.0'
+	pod 'ScrollableSegmentedControl', '~> 1.5.0'
   # Pods for Diplom
 
 end
