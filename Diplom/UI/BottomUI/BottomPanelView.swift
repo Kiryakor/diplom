@@ -32,18 +32,6 @@ class BottomPanelView: UIView {
         return view
     }()
     
-    private let cancelButton: UIButton = {
-        let view = UIButton()
-        view.setTitle("Cancel".localized, for: .normal)
-        view.titleLabel?.textAlignment = .center
-        view.titleLabel?.textColor = AppColor.textColor
-        view.layer.cornerRadius = Constants.buttonRadius
-        view.backgroundColor = AppColor.redColor
-        view.clipsToBounds = true
-        view.addTarget(self, action: #selector(tapCancelButton), for: .touchUpInside)
-        return view
-    }()
-    
     private let answerLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -110,20 +98,13 @@ class BottomPanelView: UIView {
         self.addSubviews([
             self.answerLabel,
             self.doneButton,
-            self.cancelButton,
             self.gallaryButton,
         ])
         
         self.doneButton.snp.makeConstraints { make in
             make.bottom.equalTo(-Constants.buttonSpacing)
             make.width.equalTo(Constants.buttonWidth)
-            make.right.equalTo(snp_centerXWithinMargins).offset(-Constants.buttonSpacing)
-        }
-
-        self.cancelButton.snp.makeConstraints { make in
-            make.bottom.equalTo(-Constants.buttonSpacing)
-            make.width.equalTo(Constants.buttonWidth)
-            make.left.equalTo(snp_centerXWithinMargins).offset(Constants.buttonSpacing)
+            make.centerX.equalTo(self)
         }
         
         self.answerLabel.snp.makeConstraints { make in
@@ -135,11 +116,6 @@ class BottomPanelView: UIView {
             make.width.height.equalTo(Constants.gallarySize)
             make.right.bottom.equalTo(-Constants.buttonSpacing)
         }
-    }
-    
-    @objc
-    private func tapCancelButton() {
-        self.cancelAction?()
     }
     
     @objc
