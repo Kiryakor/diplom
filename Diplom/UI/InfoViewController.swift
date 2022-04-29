@@ -114,6 +114,7 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         self.segmentsScrollView.snp.makeConstraints { make in
             make.top.equalTo(self.topView.snp_bottomMargin).offset(-8)
             make.height.equalTo(44)
+            make.centerX.equalTo(self.view)
             make.left.right.equalTo(self.view)
         }
         
@@ -158,6 +159,9 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         if index == 0 {
             self.simularView.isHidden = false
             self.infoView.isHidden = true
+        } else if index == 1 {
+            self.simularView.isHidden = true
+            self.infoView.isHidden = false
         } else if index == 2 {
             self.simularView.isHidden = true
             self.infoView.isHidden = true
