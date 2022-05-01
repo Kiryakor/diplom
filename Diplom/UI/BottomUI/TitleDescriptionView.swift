@@ -13,13 +13,16 @@ class TitleDescriptionView: UIView {
         let label = UILabel()
         label.numberOfLines = 1
         label.textAlignment = .center
+        label.font = AppFont.titleFont
         return label
     }()
     
     private let infoTextView: UITextView = {
-        let label = UITextView()
-        label.isEditable = false
-        return label
+        let textView = UITextView()
+        textView.isEditable = false
+        textView.backgroundColor = .clear
+        textView.font = AppFont.textFont
+        return textView
     }()
     
     var title: String? {

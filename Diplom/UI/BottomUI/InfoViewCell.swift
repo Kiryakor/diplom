@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfoViewCell: UICollectionViewCell {
+final class InfoViewCell: UICollectionViewCell {
     
     private let imageView: UIImageView = {
         let view = UIImageView()
@@ -20,7 +20,7 @@ class InfoViewCell: UICollectionViewCell {
         willSet {
             
             guard let imageName = newValue else {
-                self.imageView.image = nil
+                self.imageView.image = UIImage(named: "placeholder")
                 return
             }
             
@@ -38,12 +38,13 @@ class InfoViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        imageView.image = nil
+        imageView.image = UIImage(named: "placeholder")
     }
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
+        self.backgroundColor = .clear
         self.addSubviews([imageView])
         
         self.imageView.snp.makeConstraints { make in

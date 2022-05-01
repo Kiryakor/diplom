@@ -79,10 +79,6 @@ class LiveCameraViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
-        self.answerPanelView.cancelAction = {
-            print("cancelAction")
-        }
-        
         self.answerPanelView.doneAction = { [weak self] in
             guard let self = self else { return }
             
@@ -107,7 +103,7 @@ class LiveCameraViewController: UIViewController {
             make.centerX.centerY.equalTo(view)
         }
         
-        scannerView.title = "Camera".localized
+        scannerView.title = "CAMERA".localized
         scannerView.image = AppImage.cameraIcon
     }
 }

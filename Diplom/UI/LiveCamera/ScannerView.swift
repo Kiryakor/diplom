@@ -21,6 +21,7 @@ class ScannerView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
+        label.font = AppFont.titleFont
         label.textAlignment = .center
         return label
     }()

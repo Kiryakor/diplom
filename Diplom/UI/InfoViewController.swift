@@ -26,14 +26,11 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     private let simularView: SimularView = {
         let view = SimularView()
-        return view
-    }()
-    
-    private let infoView: TitleDescriptionView = {
-        let view = TitleDescriptionView()
         view.isHidden = true
         return view
     }()
+    
+    private let infoView = TitleDescriptionView()
     
     private let segmentsScrollView: ScrollableSegmentedControl = {
         let segmentsScrollView = ScrollableSegmentedControl(frame: .zero)
@@ -43,7 +40,6 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         segmentsScrollView.insertSegment(withTitle: "AUDIO_INFO".localized, at: 2)
         segmentsScrollView.selectedSegmentIndex = 0
         segmentsScrollView.underlineSelected = true
-        segmentsScrollView.fixedSegmentWidth = false
         segmentsScrollView.addTarget(self, action: #selector(segmentControlAction), for: .valueChanged)
         return segmentsScrollView
     }()
@@ -114,7 +110,6 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         self.segmentsScrollView.snp.makeConstraints { make in
             make.top.equalTo(self.topView.snp_bottomMargin).offset(-8)
             make.height.equalTo(44)
-            make.centerX.equalTo(self.view)
             make.left.right.equalTo(self.view)
         }
         
@@ -157,16 +152,16 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
         let index = self.segmentsScrollView.selectedSegmentIndex
         
         if index == 0 {
-            self.simularView.isHidden = false
-            self.infoView.isHidden = true
-        } else if index == 1 {
             self.simularView.isHidden = true
             self.infoView.isHidden = false
+        } else if index == 1 {
+            self.simularView.isHidden = false
+            self.infoView.isHidden = true
         } else if index == 2 {
             self.simularView.isHidden = true
             self.infoView.isHidden = true
             
-            let alert = UIAlertController(title: nil, message: "В процессе разработки", preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: nil, message: "ON_DEVELOPMENT_STAGE".localized, preferredStyle: .actionSheet)
             let cancelAction =  UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(cancelAction)
             self.present(alert, animated: true, completion: nil)

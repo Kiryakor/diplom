@@ -24,6 +24,7 @@ class SimularView: UIView,
         view.showsVerticalScrollIndicator = false
         view.showsHorizontalScrollIndicator = false
         view.register(InfoViewCell.self, forCellWithReuseIdentifier: "cell")
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -46,15 +47,15 @@ class SimularView: UIView,
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        let request = "sobor1.jpg"
-        FirebaseService.requestImage(with: request) { result in
-            switch result {
-            case .success(let data):
-                print(data)
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        let request = "sobor1.jpg"
+//        FirebaseService.requestImage(with: request) { result in
+//            switch result {
+//            case .success(let data):
+//                print(data)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
     
     required init?(coder: NSCoder) {

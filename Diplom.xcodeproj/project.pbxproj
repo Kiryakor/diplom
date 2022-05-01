@@ -16,6 +16,7 @@
 		ED12100527D7A87A000C7492 /* FilterPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED12100427D7A87A000C7492 /* FilterPresentationController.swift */; };
 		ED12100727D7A8E8000C7492 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED12100627D7A8E8000C7492 /* InfoViewController.swift */; };
 		ED2B514A27497CCF00C13E27 /* String + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B514927497CCF00C13E27 /* String + extension.swift */; };
+		ED4EE8C3281ECFA500E94828 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4EE8C2281ECFA500E94828 /* AppFont.swift */; };
 		ED5197DB27D7AA5D0099A6DB /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5197DA27D7AA5D0099A6DB /* PhotoViewerViewController.swift */; };
 		ED56CF4F27DB6F0D005DB28D /* SimularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56CF4E27DB6F0D005DB28D /* SimularView.swift */; };
 		ED56CF5127DB6F50005DB28D /* TitleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56CF5027DB6F50005DB28D /* TitleDescriptionView.swift */; };
@@ -44,6 +45,7 @@
 		ED12100427D7A87A000C7492 /* FilterPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPresentationController.swift; sourceTree = "<group>"; };
 		ED12100627D7A8E8000C7492 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		ED2B514927497CCF00C13E27 /* String + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extension.swift"; sourceTree = "<group>"; };
+		ED4EE8C2281ECFA500E94828 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		ED5197DA27D7AA5D0099A6DB /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		ED56CF4E27DB6F0D005DB28D /* SimularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimularView.swift; sourceTree = "<group>"; };
 		ED56CF5027DB6F50005DB28D /* TitleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				ED04A51C27777396003D533B /* AppImage.swift */,
 				EDC02DB727483B7A004EBFB0 /* AppColor.swift */,
+				ED4EE8C2281ECFA500E94828 /* AppFont.swift */,
 			);
 			path = SystemConstants;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				EDC02DB827483B7A004EBFB0 /* AppColor.swift in Sources */,
 				ED616D032746B2420058669D /* SceneDelegate.swift in Sources */,
 				ED07B7D827DC84F500775FD3 /* InfoViewCell.swift in Sources */,
+				ED4EE8C3281ECFA500E94828 /* AppFont.swift in Sources */,
 				EDC02DB62748397B004EBFB0 /* BottomPanelView.swift in Sources */,
 				ED04A51D27777396003D533B /* AppImage.swift in Sources */,
 				ED56CF5127DB6F50005DB28D /* TitleDescriptionView.swift in Sources */,

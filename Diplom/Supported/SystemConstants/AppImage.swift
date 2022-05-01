@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 enum AppImage {
-    static let cameraIcon = UIImage(named: "camera")?.withTintColor(AppColor.blackColor)
+    static let cameraIcon = UIImage(named: "camera")
 }

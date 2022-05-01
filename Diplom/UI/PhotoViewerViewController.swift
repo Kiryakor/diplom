@@ -73,10 +73,6 @@ class PhotoViewerViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
-        self.answerPanelView.cancelAction = {
-            print("cancelAction")
-        }
-        
         self.answerPanelView.hideGallatyButton()
         
         self.answerPanelView.doneAction = { [weak self] in

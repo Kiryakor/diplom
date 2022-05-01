@@ -13,6 +13,7 @@ enum AppColor {
     static let greenColor = UIColor.green
     static let blackColor = UIColor.black
     
+    static let lightGray = UIColor.lightGray
     static let textColor = UIColor.black
     static let backgroundColor = UIColor.white
     static let clearColor = UIColor.clear

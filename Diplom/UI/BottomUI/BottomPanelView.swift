@@ -10,9 +10,9 @@ import UIKit
 class BottomPanelView: UIView {
     
     private enum Constants {
-        static let buttonRadius: CGFloat = 5
+        static let buttonRadius: CGFloat = 8
         static let buttonSpacing: CGFloat = 16
-        static let buttonWidth: CGFloat = 100
+        static let buttonWidth: CGFloat = 150
         static let titleSpacing: CGFloat = 8
         
         static let panelHeight: CGFloat = 100 // toDo высчитывать от контента
@@ -20,14 +20,17 @@ class BottomPanelView: UIView {
         static let gallarySize: CGFloat = 35
     }
     
-    private let doneButton: UIButton = {
+    private let infoButton: UIButton = {
         let view = UIButton()
-        view.setTitle("Инфо блок".localized, for: .normal)
+        view.setTitle("INFO_BLOCK".localized, for: .normal)
         view.titleLabel?.textAlignment = .center
         view.titleLabel?.textColor = AppColor.textColor
         view.layer.cornerRadius = Constants.buttonRadius
         view.clipsToBounds = true
-        view.backgroundColor = AppColor.greenColor
+        view.backgroundColor = AppColor.lightGray
+        view.layer.shadowRadius = 4.0
+        view.layer.shadowOpacity = 0.6
+        view.layer.shadowOffset = .zero
         view.addTarget(self, action: #selector(tapDoneButton), for: .touchUpInside)
         return view
     }()
@@ -82,7 +85,6 @@ class BottomPanelView: UIView {
         }
     }
     
-    var cancelAction: (() -> Void)?
     var doneAction: (() -> Void)?
     var gallaryAction: (() -> Void)?
     
@@ -97,11 +99,11 @@ class BottomPanelView: UIView {
         
         self.addSubviews([
             self.answerLabel,
-            self.doneButton,
+            self.infoButton,
             self.gallaryButton,
         ])
         
-        self.doneButton.snp.makeConstraints { make in
+        self.infoButton.snp.makeConstraints { make in
             make.bottom.equalTo(-Constants.buttonSpacing)
             make.width.equalTo(Constants.buttonWidth)
             make.centerX.equalTo(self)
